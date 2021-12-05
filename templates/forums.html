@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>Informações Gerais</h1>
+            </div>
+
+            <div class="subforum-title">
+
+                  {% if not request.user.is_authenticated %}
+                    <div class="comment">
+                        <button onclick="showReplies('comment{{comment.id}}')">ffff</button>
+                    </div>
+                    {% endif %}
+            </div>
+
+            {% for forum in forums %}
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa fa-car center fa-2x"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="{{forum.get_url}}">{{forum.title}}</a></h4>
+                    <p>Descrição: {{forum.description}} </p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>{{forum.num_posts}} Postagens</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="{{forum.last_post.get_url}}">Última postagem</a></b> por <a href="">{{forum.last_post.user.fullname|title}}</a> 
+                    <br>sobre <small>{{forum.last_post.date|date}}</small>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+        <!--More-->
+        
+        
+        
+    </div>
+
+    <!-- Forum Info -->
+    <div class="forum-info">
+        <div class="chart">
+           
+            Meus --- FORUNS &nbsp;<i class="far fa-chart-bar far-2x" ></i>
+        </div>
+        <span><u>{{num_posts}}</u> Postagem em <u>{{num_categories}}</u> Categorias por <u>{{num_users}}</u> Membros.</span><br>
+        <span>Postagens anteriores <b><a href="{{last_post.get_url}}">{{last_post.title}}</a></b> on {{last_post.date|date}} By <a href="">{{last_post.user.fullname|title}}</a></span>.<br>
+        <span>Checar <a href="{% url 'latest_posts' %}">as últimas postagens</a> .</span><br>
+    </div>
+
+    {% endblock content %}

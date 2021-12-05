@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h1 style="text-align:center; margin-block:50px; color:red;">Olá {{user}},Torne-se um autor</h1>
+   <h1 style="text-align:center; margin-block:50px; color:red;">autor
+    {{request.user.id}}
+    </h1> 
+<form class="atualiza_p" method="POST" action=" " enctype="multipart/form-data" style="margin-left:2%">
+    {% csrf_token %}    
+                {{form.as_p}}
+                {{form.media}}
+    <input type="submit" value="Salvar"  style="margin-block:50px;">
+</form>
+
+{% endblock content %}

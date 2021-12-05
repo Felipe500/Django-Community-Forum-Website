@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h1 style="text-align:center; margin-block:100px; color:white;">Olá {{user}}, Escreva algo</h1>
+<div >
+<form method="POST" style="margin-right:5%; margin-left:10%;  width:50%;">
+    {% csrf_token %}  
+    {{form.media}}  
+    {{form|crispy}}
+    <input type="submit" value="Abrir Discussão"  style="margin-block:50px;">
+</form>
+</div>
+{% endblock content %}

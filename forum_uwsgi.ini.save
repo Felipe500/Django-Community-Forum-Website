@@ -1,0 +1,9 @@
+chdir           = 
+
+module          = django_vps.wsgi
+#home            = /home/ubuntu/venv
+master          = true
+processes       = 10
+socket          = /home/ubuntu/django-apache-nginx-uwsgi-vps-ubuntu/mysite.sock
+vacuum          = true
+chmod-socket    = 666

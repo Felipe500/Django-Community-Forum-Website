@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h1 style="text-align:center; margin-block:50px; color:red; font-size: 25px;">Logar agora</h1>
+
+<form method="POST" action="." style="margin-left:150px; font-size: 20px;">
+    {% csrf_token %}    
+    {{form|crispy}}
+    <input type="submit" value="Logar"  style="margin-block:50px; font-size: 20px">
+</form>
+
+{% endblock content %}
