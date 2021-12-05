@@ -6,6 +6,8 @@ INSTALE E CONFIGURE O NGNIX PARA TESTAR ESSA APLICAÇÃO EM SUA MAQUINA
 
 https://github.com/Felipe500/django-apache-nginx-uwsgi-vps-ubuntu
 
+# SEGUE O TUTORIAL DO https://github.com/Gpzim98/django-apache-nginx-uwsgi-vps-ubuntu
+
 ## Preparing the environmnet
 ```
 sudo apt-get install python3-venv
