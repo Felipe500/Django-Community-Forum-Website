@@ -92,6 +92,12 @@ class Post(models.Model):
     categories = models.ManyToManyField(Category)
     date = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
+    arquivo1 = models.FileField(upload_to='uploads/%Y/%m/%d/',blank=True,null=True)
+    descricao_arquivo1 = models.CharField(max_length=50,default='arquivo1',blank=True,null=True)
+    arquivo2 = models.FileField(upload_to='uploads/%Y/%m/%d/',blank=True,null=True)
+    descricao_arquivo2 = models.CharField(max_length=50, default='arquivo2',blank=True,null=True)
+    arquivo3 = models.FileField(upload_to='uploads/%Y/%m/%d/',blank=True,null=True)
+    descricao_arquivo3 = models.CharField(max_length=50, default='arquivo3',blank=True,null=True)
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk',
         related_query_name='hit_count_generic_relation'
     )

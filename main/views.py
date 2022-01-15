@@ -128,7 +128,7 @@ def perfil_usuario(request):
 @login_required
 def create_post(request):
     context = {}
-    form1 = PostForm(request.POST or None)
+    form1 = PostForm(request.POST ,request.FILES)
     if request.method == "POST":
         if form1.is_valid():
             print("\n\n its valid",form1)

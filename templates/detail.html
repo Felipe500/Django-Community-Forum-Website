@@ -30,7 +30,18 @@
                 </div>
                 <div class="content">
                     {{post.content|safe}}
-
+                     {% if post.arquivo1 %}
+                        {{ post.descricao_arquivo1 }}: &nbsp; <a href="{{post.arquivo1.url}}">ACESSAR ARQUIVO</a>
+                    {% endif %}
+                    <br>
+                    {% if post.arquivo2 %}
+                       {{ post.descricao_arquivo2 }}: &nbsp;  <a href="{{post.arquivo2.url}}">ACESSAR ARQUIVO</a>
+                    {% endif %}
+                     <br>
+                    {% if post.arquivo3 %}
+                        {{ post.descricao_arquivo3 }}: &nbsp;  <a href="{{post.arquivo3.url}}">ACESSAR ARQUIVO</a>
+                    {% endif %}
+                     <br>
                     <br>
                     <div class="comment">
                         <button onclick="showComment()">Comentário</button>
